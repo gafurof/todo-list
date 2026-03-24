@@ -16,7 +16,6 @@ export const useAddTodo = () => {
     mutationFn: (newTodo: Todo) => addTodo(newTodo),
 
     onSuccess: (addedTodo) => {
-      // keshni qo'lda yangilash
       queryClient.setQueryData<Todo[]>(['todos'], (oldTodos = []) => [...oldTodos, addedTodo])
     }
   })
